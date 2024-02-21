@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'Open_Sans_Bold';
+	src: url("../fonts/OpenSans-Regular.ttf");
+	font-size: 1em;
+}
+#logotipo{
+    margin-left: 0.6%;
+    margin-top: 0.6%;
+    position: absolute;
+    z-index: 2;
+    float: left;
+}
+#imagem_fundo{
+    position: relative;
+    height: 700px;
+    width: 100vw;
+    z-index: 0;
+    margin-top: -56px;
+}
+#menu{
+    display: flex;
+    justify-content: center;
+}
+#opcoes{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+
+}
+#opcoes a{
+    font-family: "Open_Sans_Bold";  
+    color: white;
+    text-decoration: none;
+
+}
+#opcoes a:hover{
+    color: rgb(101, 101, 228);
+}
