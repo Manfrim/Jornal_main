@@ -10,13 +10,6 @@
     z-index: 2;
     float: left;
 }
-#imagem_fundo{
-    position: relative;
-    height: 700px;
-    width: 100vw;
-    z-index: 0;
-    margin-top: -56px;
-}
 #menu{
     display: flex;
     justify-content: center;
@@ -29,10 +22,64 @@
 }
 #opcoes a{
     font-family: "Open_Sans_Bold";  
-    color: white;
     text-decoration: none;
 
 }
 #opcoes a:hover{
     color: rgb(101, 101, 228);
+}
+#botao-pesquisar{
+    color: rgb(101, 101, 228);
+    border-color: rgb(101, 101, 228);    
+}
+#botao-pesquisar:hover{
+    color: black;
+    
+}
+
+
+/* pagina inicial */
+
+#imagem_fundo{
+    position: relative;
+    height: 700px;
+    width: 100vw;
+    z-index: 0;
+    margin-top: -56px;
+}
+#separador{
+    position: relative;
+    margin-top: 70px;
+}
+#separador h1{
+    font-size: 2em;
+    margin-top: 0px;
+    transition: 3s;
+}
+#separador h1:hover{
+    color: rgba(0, 0, 100, 1);
+}
+#linha-separador{
+    width: 100%;
+    border: none;
+    height: 8px;
+    background-color: blue;
+}
+#materias-principais{
+    margin-top: 70px;
+}
+#materias-principais img{
+    max-width: 382px;
+    max-height: 195.27px;
+    transition: 0.4s;
+}
+#materias-principais img:hover{
+    transform: scale(1.05);
+}
+#materias-principais .row{
+    justify-content: space-evenly;
+}
+#materias-principais .card{
+    border-color: black;
+    border-width: 1px;
 }
