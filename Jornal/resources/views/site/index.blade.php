@@ -34,8 +34,15 @@
                             </a>
                             <div class="card-body" style="overflow-y: auto;">
                                 <h5 class="card-title">{{$item->nome_materia}}</h5>
-                                <p class="card-text">{{$item->resumo_materia}}</p>
-                                <a href="{{ route('site.lermateria', ['id' => $item->id]) }}" class="btn btn-outline-dark">Leia Agora</a>
+                                <div class = "row">
+                                    <div class = "col-md-6 mb-4">
+                                        <a href="{{ route('site.lermateria', ['id' => $item->id]) }}" class="btn btn-outline-dark">Leia Agora</a>
+                                    </div>
+                                    <div class = "col-md-6 mb-4">
+                                        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -43,4 +50,9 @@
             </div>
         </div>
     </main>
+    <script>
+        const popover = new bootstrap.Popover('.popover-dismiss', {
+        trigger: 'focus'
+        })
+    </script>
 @endsection

@@ -75,11 +75,12 @@
 }
 #materias-principais img:hover{
     transform: scale(1.05);
+    border-radius: 4%;
 }
 #materias-principais .row{
     justify-content: space-evenly;
 }
 #materias-principais .card{
-    border-color: black;
+    border-color: #000080;
     border-width: 1px;
 }
