@@ -34,18 +34,31 @@
                             </a>
                             <div class="card-body" style="overflow-y: auto;">
                                 <h5 class="card-title">{{$item->nome_materia}}</h5>
-                                <div class = "row">
-                                    <div class = "col-md-6 mb-4">
+                                <p>Categoria Matéria</p>
+                                <div class = "row" style = "justify-content: center;">
+                                    <div class = "col-md-5">
                                         <a href="{{ route('site.lermateria', ['id' => $item->id]) }}" class="btn btn-outline-dark">Leia Agora</a>
                                     </div>
-                                    <div class = "col-md-6 mb-4">
-                                        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+                                    <div class = "col-md-5">
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#{{$item->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Saiba Mais
+                                        </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
+                @endforeach
+            </div>
+            <div class = "container-fluid" id = "resumos-materias">
+                @foreach($ultimos3 as $item)
+                <div style="min-height: 120px;">
+                    <div class="collapse collapse-horizontal" id="{{$item->id}}">
+                        <div class="card card-body" style="width: 80vw;">
+                        {{$item->resumo_materia}}
+                        </div>
+                    </div>
+                </div>
                 @endforeach
             </div>
         </div>
