@@ -63,9 +63,24 @@
             </div>
         </div>
     </main>
-    <script>
-        const popover = new bootstrap.Popover('.popover-dismiss', {
-        trigger: 'focus'
-        })
-    </script>
+    <section alt = "principal-escritor">
+        <div class = "container-fluid" id = "resumo-sobre-rogerio">
+            <div class = "row" style="justify-content: center;">
+                <div class = "col-md-4">
+                    <a href="{{ route('site.escritor') }}"><img src="img/foto_linkedin.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class = "col-md-7">
+                    <h2>Um pouco sobre Rogério</h2>
+                    <p>Lorem ipsum dolor sit amet. Et dolore ratione eos voluptatem neque 33 reiciendis deserunt? Et necessitatibus veniam et sapiente distinctio id rerum aperiam et dolore molestiae qui amet libero non enim ratione. Sed aperiam distinctio id molestiae quaerat ex dignissimos autem et nemo consequatur et sint aperiam aut sapiente commodi cum veniam internos.
+                    Sit officia nobis est cumque explicabo ut eaque deserunt ut consequuntur dolor ab dolor animi. Ab voluptatem eligendi est corporis ullam id culpa facere vel beatae velit ut optio delectus? Ex saepe voluptatibus ex molestias dolorum sit aperiam veniam?
+                    </p>
+                    <div class = "row" style="display: flow; justify-content: space-between;">
+                        <a href = "https://www.instagram.com/prof_manfrim/"><i id = "instagram" class="fa-brands fa-instagram fa-2xl"></i></a>
+                        <a href = "https://www.linkedin.com/in/manfrim/"><i id = "linkedin" class="fa-brands fa-linkedin fa-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 @endsection

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{asset('css/jornal.css')}}">
         <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="https://kit.fontawesome.com/f7b2e39453.js" crossorigin="anonymous"></script>
 
     </head>
 

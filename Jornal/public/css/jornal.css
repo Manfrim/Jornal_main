@@ -93,3 +93,37 @@ html, body {
     display: flex;
     justify-content: center;
 }
+#resumo-sobre-rogerio{
+    margin-top: 40px;
+}
+#resumo-sobre-rogerio img{
+    border-radius: 50%;
+}
+#resumo-sobre-rogerio p{
+    font-size: 1.5em;
+}
+#resumo-sobre-rogerio h2{
+    transition: 2s;
+}
+#resumo-sobre-rogerio h2:hover{
+    color: rgba(0, 0, 100, 1);
+}
+#instagram{
+    color: #191970;
+}
+#instagram:hover{
+    color: #F60291;
+}
+#linkedin{
+    color:#191970;
+}
+#linkedin:hover{
+    color: #0B66C3;
+}
+
+/* pagina de login */
+
+#estrutura-login{
+    position: relative;
+    display: flex;
+}

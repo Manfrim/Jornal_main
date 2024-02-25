@@ -9,7 +9,7 @@
                 <a href="{{ route('site.escritor') }}" class="navbar-brand">Escritores</a>
                 <a href="#" class="navbar-brand">Matérias</a>
                 <a href="#" class="navbar-brand">Quem somos</a>
-                <a href="#" class="navbar-brand">Entrar</a>
+                <a href="{{ route("site.login")}}" class="navbar-brand">Entrar</a>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar...." aria-label="Search">
                     <button class="btn" type="submit" id = "botao-pesquisar">Pesquisar</button>
