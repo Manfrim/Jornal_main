@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('Jornal', function (Blueprint $table) {
-            $table->increments("id");
+            $table->id();
             $table->text('nome_materia');
             $table->text('resumo_materia');
             $table->text('materia_p1');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('storage');
+        Schema::dropIfExists('Jornal');
     }
 };
