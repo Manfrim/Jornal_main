@@ -2,16 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('', [\App\Http\Controllers\PrincipalController::class, 'principal'])->name('site.index');
 Route::get('/escritores', [\App\Http\Controllers\EscritorController::class, 'escritor'])->name('site.escritor');
@@ -22,5 +12,11 @@ Route::post('/validalogin', [\App\Http\Controllers\ValidaLogin::class, 'valida_l
 
 Route::get('/validalogin', [\App\Http\Controllers\ValidaLogin::class, 'valida_login'])->name('site.validalogin');
 
-Route::get('/editormaterias', [\App\Http\Controllers\ValidaLogin::class, 'edita_materia_view'])->name('site.editamateria.view');
-Route::post('/editormaterias', [\App\Http\Controllers\ValidaLogin::class, 'edita_materia'])->name('site.editamateria.process');
+Route::get('/editormaterias', [\App\Http\Controllers\ValidaLogin::class, 'edita_materia'])->name('site.editamateria')->middleware('auth');
+Route::post('/editormaterias', [\App\Http\Controllers\ValidaLogin::class, 'edita_materia'])->name('site.editamateria')->middleware('auth');
+
+Route::get('/adicionamateria', [\App\Http\Controllers\AdicionaMateria::class,'adicionamateria'])->name('site.adicionamateria');
+Route::post('/adicionamateria', [\App\Http\Controllers\AdicionaMateria::class,'adicionamateria'])->name('site.adicionamateria');
+
+Route::get('/editarmateria', [\App\Http\Controllers\EditarMateria::class,'editarmateria'])->name('site.editarmateria');
+Route::post('/editarmateria', [\App\Http\Controllers\EditarMateria::class,'editarmateria'])->name('site.editarmateria');
