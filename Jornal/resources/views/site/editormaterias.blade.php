@@ -42,12 +42,13 @@
                 <h5>Coloque o nome da segunda imagem</h5>
                 <textarea class="form-control" placeholder="Leave a comment here" name="imagem_2"></textarea>
                 <br>
-                <button type="submit" class="btn btn-primary">Adicionar Matéria</button>
+                <button type="submit" class="btn btn-outline-danger">Adicionar Matéria</button>
             </form>
             </div>
         </div>
 
         <div class = "d-none" id = "editarmateria">
+            <div class = "container">   
                 @foreach(DB::table('jornal')->get() as $item)
                     <h2>{{$item->nome_materia}}</h2>
                     <button class = "btn btn-outline-dark" onclick="edicaomateria({{$item->id}})">Editar</button>
@@ -73,29 +74,62 @@
                         <h5>Coloque o nome da segunda imagem</h5>
                         <textarea class="form-control" placeholder="Leave a comment here" name="imagem_2">{{$item->imagem_2}}</textarea>
                         <br>
-                        <button type="submit" class="btn btn-primary" value = "{{$item->id}}" name = "id">Atualizar Matéria</button>
+                        <button type="submit" class="btn btn-outline-danger" value = "{{$item->id}}" name = "id">Atualizar Matéria</button>
                     </form>
                     </div>
                 @endforeach
+            </div>
+        </div>
+
+        <div class = "d-none" id = "excluirmateria">
+            <div class = "container">
+            @foreach(DB::table('jornal')->get() as $item)
+                <form action= {{ route("site.excluirmateria") }}>
+                
+                    <h2>{{$item->nome_materia}}</h2>
+                    <button type = "submit" value = "{{$item->id}}" name = "id" class = "btn btn-outline-danger">excluir</button>
+                
+                </form>
+            @endforeach
+            </div>
         </div>
     </main>
     <script>
-        var adicionar_materia = document.getElementById("adicionarmateria");
-        var editarmateria = document.getElementById("editarmateria");
-        function aparecer1(){
-            if(adicionar_materia.classList.contains("d-none")){
-                adicionar_materia.classList.remove("d-none")
-            } else{
-                adicionar_materia.classList.add("d-none")
-            }
+    var adicionar_materia = document.getElementById("adicionarmateria");
+    var editarmateria = document.getElementById("editarmateria");
+    var excluirmateria = document.getElementById("excluirmateria");
+
+    function hideElement(element) {
+        if (!element.classList.contains("d-none")) {
+            element.classList.add("d-none");
         }
-        function aparecer2(){
-            if(editarmateria.classList.contains("d-none")){
-                editarmateria.classList.remove("d-none");
-            } else{
-                editarmateria.classList.add("d-none");
-            }
+    }
+
+    function toggleVisibility(element) {
+        if (element.classList.contains("d-none")) {
+            element.classList.remove("d-none");
+        } else {
+            element.classList.add("d-none");
         }
+    }
+
+    function aparecer1() {
+        hideElement(editarmateria);
+        hideElement(excluirmateria);
+        toggleVisibility(adicionar_materia);
+    }
+
+    function aparecer2() {
+        hideElement(adicionar_materia);
+        hideElement(excluirmateria);
+        toggleVisibility(editarmateria);
+    }
+
+    function aparecer3() {
+        hideElement(adicionar_materia);
+        hideElement(editarmateria);
+        toggleVisibility(excluirmateria);
+    }
         function edicaomateria(id){
         var divEditarMateria = document.getElementById("form-editar-materia-" + id);
         if (divEditarMateria.classList.contains("d-none")) {

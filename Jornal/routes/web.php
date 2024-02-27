@@ -20,3 +20,6 @@ Route::post('/adicionamateria', [\App\Http\Controllers\AdicionaMateria::class,'a
 
 Route::get('/editarmateria', [\App\Http\Controllers\EditarMateria::class,'editarmateria'])->name('site.editarmateria');
 Route::post('/editarmateria', [\App\Http\Controllers\EditarMateria::class,'editarmateria'])->name('site.editarmateria');
+
+Route::get('/excluirmateria', [\App\Http\Controllers\ExcluirMateria::class,'excluirmateria'])->name('site.excluirmateria');
+Route::post('/excluirmateria', [\App\Http\Controllers\ExcluirMateria::class,'excluirmateria'])->name('site.excluirmateria');

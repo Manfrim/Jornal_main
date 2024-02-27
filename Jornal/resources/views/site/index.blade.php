@@ -53,7 +53,7 @@
             <div class = "container-fluid" id = "resumos-materias">
                 @foreach($ultimos3 as $item)
                 <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="{{$item->id}}">
+                    <div class="collapse collapse-vertical" id="{{$item->id}}">
                         <div class="card card-body" style="width: 80vw;">
                         {{$item->resumo_materia}}
                         </div>
