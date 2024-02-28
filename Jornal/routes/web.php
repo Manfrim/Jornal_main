@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', [\App\Http\Controllers\PrincipalController::class, 'principal'])->name('site.index');
 Route::get('/escritores', [\App\Http\Controllers\EscritorController::class, 'escritor'])->name('site.escritor');
+
 Route::get('/materia/{id?}', [\App\Http\Controllers\LerMateriaController::class, 'LerMateria'])->name('site.lermateria');
+Route::post('/materia/{id?}', [\App\Http\Controllers\LerMateriaController::class, 'LerMateria'])->name('site.lermateria');
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 Route::post('/validalogin', [\App\Http\Controllers\ValidaLogin::class, 'valida_login'])->name('site.validalogin');

@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Open_Sans_Bold';
+	font-family: 'Open_Sans_Regular';
 	src: url("../fonts/OpenSans-Regular.ttf");
 	font-size: 1em;
 }
@@ -30,7 +30,7 @@ html, body {
 
 }
 #opcoes a{
-    font-family: "Open_Sans_Bold";  
+    font-family: "Open_Sans_Regular";  
     text-decoration: none;
 
 }
@@ -146,4 +146,52 @@ html, body {
     position: relative;
     justify-content: center;
     margin-top: 100px;
+}
+
+
+/*pagina de ler materias*/
+#container-ler-materia{
+    margin-top: 60px;
+    position: relative;
+    text-align: center;
+}
+#container-ler-materia h2{
+    font-family: "Open_Sans_Regular";
+    font-size: 3rem;
+}
+#container-ler-materia img{
+    border-radius: 5%;
+    margin-top: 20px;
+}
+#container-ler-materia p{
+    margin-top: 25px;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+/*pagina do escritor*/
+#container-escritor{
+    position: relative;
+    margin-top: 70px;
+    height: 700px;
+}
+#container-escritor h2{
+    font-family: "Open_Sans_Regular";
+   text-align: center;
+   transition: 3s;
+}
+#container-escritor h2:hover{
+    color: darkblue;
+}
+#container-escritor img{
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: 2s;
+}
+#container-escritor img:hover{
+    opacity: 0.8;
+}
+#container-escritor p{
+    font-size: 1.3rem;
+    margin-top: 15px;
 }
