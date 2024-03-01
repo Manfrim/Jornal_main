@@ -6,14 +6,17 @@
     <section>
         <div class = "container fluid" id ="botoes-editor-materia">
             <div class = "row">
-                <div class = "col-md-4">
+                <div class = "col-md-3">
                     <button class = "btn btn-outline-dark"  onclick="aparecer1()">Adicionar Matéria</button>
                 </div>
-                <div class = "col-md-4">
+                <div class = "col-md-3">
                     <button class = "btn btn-outline-dark" onclick="aparecer2()">Editar Matéria</button>
                 </div>
-                <div class = "col-md-4">
+                <div class = "col-md-3">
                     <button class = "btn btn-outline-dark" onclick="aparecer3()">Excluir Matéria</button>
+                </div>
+                <div class = "col-md-3">
+                    <button class = "btn btn-outline-dark" onclick="aparecer4()">Pensamento Do Dia</button>
                 </div>
             </div>
         </div>
@@ -93,11 +96,22 @@
             @endforeach
             </div>
         </div>
+        <div class = "d-none" id = "pensamentododia">
+            <form action = {{ route("site.adicionarpensamento")}}>
+                @csrf
+                <h5>Coloque o pensamento do dia</h5>
+                <textarea class="form-control" placeholder="Leave a comment here" name="pensamentodia"></textarea>
+                <h5>Nome do autor</h5>
+                <textarea class="form-control" placeholder="Leave a comment here" name="nomeautor"></textarea>
+                <button type="submit" class="btn btn-outline-danger">Adicionar pensamento</button>
+            </form>
+        </div>
     </main>
     <script>
     var adicionar_materia = document.getElementById("adicionarmateria");
     var editarmateria = document.getElementById("editarmateria");
     var excluirmateria = document.getElementById("excluirmateria");
+    var adicionarpensamento = document.getElementById("pensamentododia");
 
     function hideElement(element) {
         if (!element.classList.contains("d-none")) {
@@ -117,26 +131,35 @@
         hideElement(editarmateria);
         hideElement(excluirmateria);
         toggleVisibility(adicionar_materia);
+        hideElement(adicionarpensamento);
     }
 
     function aparecer2() {
         hideElement(adicionar_materia);
         hideElement(excluirmateria);
         toggleVisibility(editarmateria);
+        hideElement(adicionarpensamento);
     }
 
     function aparecer3() {
         hideElement(adicionar_materia);
         hideElement(editarmateria);
         toggleVisibility(excluirmateria);
+        hideElement(adicionarpensamento);
     }
-        function edicaomateria(id){
-        var divEditarMateria = document.getElementById("form-editar-materia-" + id);
-        if (divEditarMateria.classList.contains("d-none")) {
-            divEditarMateria.classList.remove("d-none");
-        } else {
-            divEditarMateria.classList.add("d-none");
-        }
+    function aparecer4() {
+    hideElement(adicionar_materia);
+    hideElement(editarmateria);
+    hideElement(excluirmateria);
+    toggleVisibility(adicionarpensamento);
+    }
+    function edicaomateria(id){
+    var divEditarMateria = document.getElementById("form-editar-materia-" + id);
+    if (divEditarMateria.classList.contains("d-none")) {
+        divEditarMateria.classList.remove("d-none");
+    } else {
+        divEditarMateria.classList.add("d-none");
+    }
     }
     </script>
     @else

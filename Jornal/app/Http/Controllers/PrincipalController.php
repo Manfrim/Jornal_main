@@ -10,9 +10,9 @@ class PrincipalController extends Controller
     public function principal(){
         
         $ultimos3 = DB::select('SELECT * FROM jornal ORDER BY id DESC LIMIT 3');
+        $pensamento_do_dia = DB::select('SELECT * FROM pensamento_dia ORDER BY id DESC LIMIT 1');
 
-
-        return view("site.index", ["ultimos3" => $ultimos3]);
+        return view("site.index", ["ultimos3" => $ultimos3, "pensamento_do_dia" => $pensamento_do_dia]);
     }
 
 }

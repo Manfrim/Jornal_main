@@ -6,13 +6,15 @@
 
 html, body {
     overflow-x: hidden;
+    height: 100%;
 }
+
 #logotipo{
     margin-left: 0.6%;
     margin-top: 0.6%;
     position: absolute;
     z-index: 2;
-    float: left;
+    justify-content: left;
     transition: 1s;
 }
 #logotipo:hover{
@@ -100,37 +102,33 @@ html, body {
     display: flex;
     justify-content: center;
 }
-#resumo-sobre-rogerio{
+#pensamento_dia{
     margin-top: 40px;
 }
-#resumo-sobre-rogerio img{
-    border-radius: 50%;
+#pensamento_dia img{
+    border-radius: 30%;
     transition: 1s;
 }
-#resumo-sobre-rogerio img:hover{
-    opacity: 0.8;
+#pensamento_dia img:hover{
+    transform: scale(1.2);
 }
-#resumo-sobre-rogerio p{
+#pensamento_dia p{
     font-size: 1.5em;
 }
-#resumo-sobre-rogerio h2{
+#pensamento_dia h2{
+    font-family: "Open_Sans_Regular";
     transition: 2s;
 }
-#resumo-sobre-rogerio h2:hover{
+#pensamento_dia h2:hover{
     color: rgba(0, 0, 100, 1);
 }
-#instagram{
-    color: #191970;
+#pensamento_dia h3{
+    font-family: "Open_Sans_Regular";
 }
-#instagram:hover{
-    color: #F60291;
+#pensamento_dia p{
+    font-family: "Open_Sans_Regular";
 }
-#linkedin{
-    color:#191970;
-}
-#linkedin:hover{
-    color: #0B66C3;
-}
+
 
 /* pagina de login */
 
@@ -175,16 +173,40 @@ html, body {
     margin-top: 70px;
     height: 700px;
 }
+#container-escritor .row{
+    justify-content: center;
+}
 #container-escritor h2{
     font-family: "Open_Sans_Regular";
-   text-align: center;
-   transition: 3s;
+    text-align: center;
+    transition: 3s;
+    opacity: 0; 
+    transform: translate(-100%, 0); 
+    animation: slideIn 1.5s forwards;
 }
+@keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translate(-100%, 0);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 50%); /* No final da animação, o título está no centro vertical */
+    }
+  }
 #container-escritor h2:hover{
     color: darkblue;
 }
 #container-escritor img{
-    margin-right: 10px;
+    max-height: 500px;
+    position: relative;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
     border-radius: 50%;
     transition: 2s;
 }

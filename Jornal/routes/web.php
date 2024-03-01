@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('', [\App\Http\Controllers\PrincipalController::class, 'principal'])->name('site.index');
+
 Route::get('/escritores', [\App\Http\Controllers\EscritorController::class, 'escritor'])->name('site.escritor');
 
 Route::get('/materia/{id?}', [\App\Http\Controllers\LerMateriaController::class, 'LerMateria'])->name('site.lermateria');
@@ -25,3 +26,6 @@ Route::post('/editarmateria', [\App\Http\Controllers\EditarMateria::class,'edita
 
 Route::get('/excluirmateria', [\App\Http\Controllers\ExcluirMateria::class,'excluirmateria'])->name('site.excluirmateria');
 Route::post('/excluirmateria', [\App\Http\Controllers\ExcluirMateria::class,'excluirmateria'])->name('site.excluirmateria');
+
+Route::get('/pensamentododia', [\App\Http\Controllers\AdicionarPensamentoDia::class,'pensamentodia'])->name('site.adicionarpensamento');
+Route::post('/pensamentododia', [\App\Http\Controllers\AdicionarPensamentoDia::class,'pensamentodia'])->name('site.adicionarpensamento');
