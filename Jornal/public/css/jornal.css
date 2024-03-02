@@ -225,3 +225,27 @@ html, body {
     font-size: 1.3rem;
     margin-top: 15px;
 }
+
+
+/*pagina materias */
+#container-materias{
+    margin-top: 10%;
+}
+#container-materias .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 10.0rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+#container-materias img:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+    border-radius: 4%;
+}
+#container-materias .card{
+    border-color: #000080;
+    border-width: 1px;
+}

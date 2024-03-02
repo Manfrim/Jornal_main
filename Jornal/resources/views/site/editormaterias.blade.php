@@ -4,7 +4,7 @@
 @section('conteudo')
     @if($auth)
     <section>
-        <div class = "container fluid" id ="botoes-editor-materia">
+        <div class = "container-fluid" id ="botoes-editor-materia">
             <div class = "row">
                 <div class = "col-md-3">
                     <button class = "btn btn-outline-dark"  onclick="aparecer1()">Adicionar Matéria</button>

@@ -29,3 +29,5 @@ Route::post('/excluirmateria', [\App\Http\Controllers\ExcluirMateria::class,'exc
 
 Route::get('/pensamentododia', [\App\Http\Controllers\AdicionarPensamentoDia::class,'pensamentodia'])->name('site.adicionarpensamento');
 Route::post('/pensamentododia', [\App\Http\Controllers\AdicionarPensamentoDia::class,'pensamentodia'])->name('site.adicionarpensamento');
+
+Route::get('/materias', [\App\Http\Controllers\MateriasController::class,'materias'])->name('site.materias');
