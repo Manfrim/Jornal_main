@@ -27,7 +27,7 @@
         <div class = "container-fluid" id = "materias-principais">
             <div class = "row">
                 @foreach($ultimos3 as $item)
-                    <div class = "col-md-3 mb-4">
+                    <div class = "{{$i}}">
                         <div class="card" style="width: 24rem;  max-height: 30em;">
                             <a href="{{ route('site.lermateria', ['id' => $item->id]) }}">
                                 <img src={{asset("img/".$item->imagem_capa)}} class="card-img-top" alt="...">

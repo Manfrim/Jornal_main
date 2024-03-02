@@ -39,14 +39,7 @@ html, body {
 #opcoes a:hover{
     color: rgb(101, 101, 228);
 }
-#botao-pesquisar{
-    color: rgb(101, 101, 228);
-    border-color: rgb(101, 101, 228);    
-}
-#botao-pesquisar:hover{
-    color: black;
-    
-}
+
 
 
 /* pagina inicial */
@@ -206,9 +199,24 @@ html, body {
     justify-content: center;
     width: auto;
     height: auto;
-    margin-top: 20px;
+    margin-top: 35px;
     border-radius: 50%;
     transition: 2s;
+}
+#instagram, #linkedin{
+    color: black;
+}
+#instagram{
+    transition: 0.5s;
+}
+#instagram:hover{
+    color: #F60291;
+}
+#linkedin{
+    transition: 0.5s;
+}
+#linkedin:hover{
+    color: #0B66C3;
 }
 #container-escritor img:hover{
     opacity: 0.8;
