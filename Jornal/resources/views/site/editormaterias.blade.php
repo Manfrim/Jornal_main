@@ -25,6 +25,19 @@
         <div class = "d-none" id = "adicionarmateria">
             <div class = "container fluid">
                 <form method="POST" action="{{ route('site.adicionamateria') }}">
+                        <div class = "container">
+                            <div class="alert">
+                                <p>Para criar um título ou tópico, coloque o texto entre as tags &lt;b&gt;&lt;/b&gt;. Por exemplo: &lt;b&gt;<b>Título teste</b>&lt;/b&gt;.</p>
+                                <p>Para criar espaços entre um titulo e um paragrafo utilize a tag &lt;br&gt;, poderá usar varias seguidas para criar o espaçamento necessário depois do paragrafo</p>
+                                <p>Pelos testes coloque duas antes de criar um titulo dentro da area de um paragrafo e outra depois do titulo, exemplo: </p>
+                                <p>&lt;br&gt;</p>
+                                <p>&lt;br&gt;</p>
+                                <p>&lt;b&gt;II - Titulo teste&lt;/b&gt;</p>
+                                <p>&lt;br&gt;</p>
+                                <p>Para texto <i>italico</i> coloque a palvara ou frase entre as tags &lt;i&gt;&lt;/i&gt;</p>
+                                <p>para adicionar fotos coloque o nome da foto ex: foto_inovation.png. A foto dois ficara depois do segundo paragrafo e a foto de capa nao aparecerá na materia</p>
+                            </div>
+                        </div>
                 @csrf
                 <h5>Coloque o titulo da matéria</h5>
                 <textarea class="form-control" placeholder="Leave a comment here" name="titulo"></textarea>
@@ -44,6 +57,8 @@
                 <textarea class="form-control" placeholder="Leave a comment here" name="imagem_1"></textarea>
                 <h5>Coloque o nome da segunda imagem</h5>
                 <textarea class="form-control" placeholder="Leave a comment here" name="imagem_2"></textarea>
+                <h5>Categoria da Materia<h5>
+                <textarea class="form-control" placeholder="Leave a comment here" name="categoria"></textarea>
                 <br>
                 <button type="submit" class="btn btn-outline-danger">Adicionar Matéria</button>
             </form>
@@ -56,6 +71,19 @@
                     <h2>{{$item->nome_materia}}</h2>
                     <button class = "btn btn-outline-dark" onclick="edicaomateria({{$item->id}})">Editar</button>
                     <div class = "d-none" id = "form-editar-materia-{{$item->id}}">
+                        <div class = "container">
+                            <div class="alert">
+                                <p>Para criar um título ou tópico, coloque o texto entre as tags &lt;b&gt;&lt;/b&gt;. Por exemplo: &lt;b&gt;<b>Título teste</b>&lt;/b&gt;.</p>
+                                <p>Para criar espaços entre um titulo e um paragrafo utilize a tag &lt;br&gt;, poderá usar varias seguidas para criar o espaçamento necessário depois do paragrafo</p>
+                                <p>Pelos testes coloque duas antes de criar um titulo dentro da area de um paragrafo e outra depois do titulo, exemplo: </p>
+                                <p>&lt;br&gt;</p>
+                                <p>&lt;br&gt;</p>
+                                <p>&lt;b&gt;II - Titulo teste&lt;/b&gt;</p>
+                                <p>&lt;br&gt;</p>
+                                <p>Para texto <i>italico</i> coloque a palvara ou frase entre as tags &lt;i&gt;&lt;/i&gt;</p>
+                                <p>para adicionar fotos coloque o nome da foto ex: foto_inovation.png. A foto dois ficara depois do segundo paragrafo e a foto de capa nao aparecerá na materia</p>
+                            </div>
+                        </div>
                         <form method="POST" action="{{ route('site.editarmateria') }}">
                         @csrf
                         <h5>Coloque o titulo da matéria</h5>
@@ -76,7 +104,11 @@
                         <textarea class="form-control" placeholder="Leave a comment here" name="imagem_1">{{$item->imagem_1}}</textarea>
                         <h5>Coloque o nome da segunda imagem</h5>
                         <textarea class="form-control" placeholder="Leave a comment here" name="imagem_2">{{$item->imagem_2}}</textarea>
+                        <h5>Categoria da Materia<h5>
+                        <textarea class="form-control" placeholder="Leave a comment here" name="categoria">{{$item->categoria}}</textarea>
                         <br>
+                        <br>
+                        
                         <button type="submit" class="btn btn-outline-danger" value = "{{$item->id}}" name = "id">Atualizar Matéria</button>
                     </form>
                     </div>
@@ -97,14 +129,16 @@
             </div>
         </div>
         <div class = "d-none" id = "pensamentododia">
-            <form action = {{ route("site.adicionarpensamento")}}>
-                @csrf
-                <h5>Coloque o pensamento do dia</h5>
-                <textarea class="form-control" placeholder="Leave a comment here" name="pensamentodia"></textarea>
-                <h5>Nome do autor</h5>
-                <textarea class="form-control" placeholder="Leave a comment here" name="nomeautor"></textarea>
-                <button type="submit" class="btn btn-outline-danger">Adicionar pensamento</button>
-            </form>
+            <div class = "container">
+                <form action = {{ route("site.adicionarpensamento")}}>
+                    @csrf
+                    <h5>Coloque o pensamento do dia</h5>
+                    <textarea class="form-control" placeholder="Leave a comment here" name="pensamentodia"></textarea>
+                    <h5>Nome do autor</h5>
+                    <textarea class="form-control" placeholder="Leave a comment here" name="nomeautor"></textarea>
+                    <button type="submit" class="btn btn-outline-danger">Adicionar pensamento</button>
+                </form>
+            </div>
         </div>
     </main>
     <script>
@@ -112,6 +146,7 @@
     var editarmateria = document.getElementById("editarmateria");
     var excluirmateria = document.getElementById("excluirmateria");
     var adicionarpensamento = document.getElementById("pensamentododia");
+
 
     function hideElement(element) {
         if (!element.classList.contains("d-none")) {
@@ -161,6 +196,7 @@
         divEditarMateria.classList.add("d-none");
     }
     }
+
     </script>
     @else
     <script>

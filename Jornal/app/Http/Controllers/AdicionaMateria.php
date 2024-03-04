@@ -16,6 +16,7 @@ class AdicionaMateria extends Controller
         $imagem_capa = $request->input('imagem_capa');
         $imagem_1 = $request->input('imagem_1');
         $imagem_2 = $request->input('imagem_2');
+        $categoria = $request->input('categoria');
         DB::table('jornal')->insert([
             'nome_materia' => $nome_materia,
             'resumo_materia' => $resumo_materia,
@@ -26,6 +27,7 @@ class AdicionaMateria extends Controller
             'imagem_capa' => $imagem_capa,
             'imagem_1' => $imagem_1,
             'imagem_2' => $imagem_2,
+            'categoria' => $categoria,
         ]);
 
         return redirect()->back()->with('auth', true);

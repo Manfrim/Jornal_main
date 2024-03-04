@@ -23,6 +23,7 @@ class EditarMateria extends Controller
             $materia->imagem_capa = $request->input('imagem_capa');
             $materia->imagem_1 = $request->input('imagem_1');
             $materia->imagem_2 = $request->input('imagem_2');
+            $materia->categoria = $request->input('categoria');
 
             // Salve as alterações
             $materia->save();

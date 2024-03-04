@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->text('nome_materia');
             $table->text('resumo_materia');
-            $table->text('materia_p1');
-            $table->text('materia_p2');
-            $table->text('materia_p3');
-            $table->text('materia_p4');
-            $table->string("imagem_capa");
-            $table->string("imagem_1");
-            $table->string("imagem_2");
+            $table->longtext('materia_p1');
+            $table->longtext('materia_p2');
+            $table->longtext('materia_p3');
+            $table->longtext('materia_p4');
+            $table->longtext("imagem_capa");
+            $table->text("imagem_1");
+            $table->text("imagem_2");
             $table->timestamps();
         });
     }
