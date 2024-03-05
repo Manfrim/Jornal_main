@@ -2,6 +2,11 @@
 
 
 @section('conteudo')
+<style>
+    #footer{
+        margin-top: 30%;
+    }
+</style>
     <div class = "container-fluid" id = "container-escritor">
             <h2>Luiz Rogério Manfrim</h2>
             <div class = "row">

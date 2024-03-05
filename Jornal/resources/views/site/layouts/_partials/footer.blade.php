@@ -1,11 +1,26 @@
 
-    <footer class="footer" id = "footer">
-        <div class="waves">
-        <div class="wave" id="wave4"></div>
-        </div>
-        <ul class="menu">
-            <li class="menu__item"><a class="menu__link" href="{{ route('site.escritor') }}">Escritor</a></li>
-            <li class="menu__item"><a class="menu__link" href="{{ route('site.materias') }}">Matérias</a></li>
-            <li class="menu__item"><a class="menu__link" href="{{ route('site.login') }}">Entrar</a></li>
-        </ul>
+    <footer id = "footer">
+       <hr> 
+       <div class = "container-fluid">
+        <div class = "container">
+                <div class="row">
+                    <div class = "col-md-6">
+                        <ul>
+                            <li><a href="#">Escritor</a></li>
+                            <li><a href="#">Matérias</a></li>
+                            <li><a href="#">Entrar</a></li>    
+                        </ul>
+                        </div>
+                    <div class = "col-md-6">
+                        <div class="container">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in fa-xl" style="color: #2b2b2b;"></i>prof_mafrim</a>
+                                <li><a href="#"><i class="fa-brands fa-instagram fa-xl" style="color: #2b2b2b;"></i>Prof. Manfrim, Luiz R.</a>
+                            </ul>
+                            
+                        </div>
+                    </div>    
+                </div>
+            </div>
+       </div>
     </footer>
